@@ -1,9 +1,9 @@
 "use client"
 
+import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
-import { FCMark } from "@/components/fc-mark"
 
 export function Hero() {
   return (
@@ -151,10 +151,16 @@ export function Hero() {
             </svg>
             
             <div className="relative flex items-center justify-center h-full z-[2]">
-              <FCMark
-                ariaLabel="Formless Creature"
-                className="w-[39%] h-auto opacity-90 text-foreground"
+              <Image
+                src="/fc-mark.png"
+                alt="Formless Creature"
+                width={400}
+                height={400}
+                sizes="(min-width: 1024px) 234px, (min-width: 768px) 187px, 156px"
+                className="w-[39%] h-auto opacity-90"
                 style={{ filter: "drop-shadow(0 0 40px rgba(187,222,242,0.25)) drop-shadow(0 0 80px rgba(209,170,215,0.15))" }}
+                priority
+                fetchPriority="high"
               />
             </div>
           </motion.div>
