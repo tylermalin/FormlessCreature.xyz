@@ -28,11 +28,12 @@ export function Footer() {
           {/* Brand */}
           <div>
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/formless%20white%20banner-0oc5J9kNKTdkv24zFP5WWtML107PDK.png"
+              src="/fc-lockup-white.png"
               alt="Formless Creature"
-              width={180}
-              height={40}
+              width={250}
+              height={100}
               className="h-auto w-[180px] mb-4"
+              loading="lazy"
             />
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
               Consulting for growth, AI integration, and automation. Two partners, hand-selected specialist bench, sixteen service lines across three practices.

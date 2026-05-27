@@ -4,13 +4,9 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'hebbkx1anhila5yf.public.blob.vercel-storage.com',
-      },
-    ],
+    // All site images are now hosted in /public; no external remotes needed.
+    // Keep optimization enabled so Next.js generates per-display WebP/AVIF
+    // variants for the footer lockup + OG image.
   },
 }
 

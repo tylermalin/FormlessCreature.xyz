@@ -1,9 +1,9 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
 import { useState } from "react"
 import { Menu, X, ArrowRight } from "lucide-react"
+import { FCMark } from "@/components/fc-mark"
 
 const navLinks = [
   { href: "/#approach", label: "Approach" },
@@ -22,12 +22,9 @@ export function Navigation() {
         <div className="flex items-center justify-between h-[72px]">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
-            <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fcmarkonly-d2U4DaaK7ouPlnToLY1ezKlIMTFBXq.png"
-              alt="Formless Creature"
-              width={32}
-              height={32}
-              className="h-7 md:h-8 w-auto -translate-y-px"
+            <FCMark
+              ariaLabel="Formless Creature"
+              className="h-7 md:h-8 w-7 md:w-8 -translate-y-px text-foreground"
             />
             <span className="font-normal text-foreground tracking-tight text-[16px] md:text-[17px]">
               Formless Creature
