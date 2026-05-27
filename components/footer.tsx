@@ -1,55 +1,109 @@
 import Image from "next/image"
 import Link from "next/link"
 
+const footerLinks = {
+  navigate: [
+    { href: "#approach", label: "Approach" },
+    { href: "#services", label: "Services" },
+    { href: "#engagement", label: "Engagement" },
+    { href: "#process", label: "Process" },
+  ],
+  company: [
+    { href: "#about", label: "About Tyler" },
+    { href: "#faq", label: "FAQ" },
+    { href: "#contact", label: "Contact" },
+  ],
+  legal: [
+    { href: "#", label: "Privacy" },
+    { href: "#", label: "Terms" },
+  ],
+}
+
 export function Footer() {
   return (
-    <footer className="py-16 border-t border-border/50">
+    <footer className="py-16 lg:py-20 border-t border-border/30">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-          {/* Logo and tagline */}
-          <div className="flex items-center gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr_1fr] gap-12 mb-12">
+          {/* Brand */}
+          <div>
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fcmarkonly-d2U4DaaK7ouPlnToLY1ezKlIMTFBXq.png"
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/formless%20white%20banner-0oc5J9kNKTdkv24zFP5WWtML107PDK.png"
               alt="Formless Creature"
-              width={32}
-              height={32}
-              className="h-8 w-auto"
+              width={180}
+              height={40}
+              className="h-auto w-[180px] mb-4"
             />
-            <div>
-              <span className="font-medium text-foreground block">Formless Creature</span>
-              <span className="text-sm text-muted-foreground">Growth infrastructure for platforms</span>
-            </div>
+            <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
+              Retention infrastructure for platforms. Email, SMS, promotional bonus engines, 
+              and the compliance architecture underneath them.
+            </p>
           </div>
 
-          {/* Links */}
-          <div className="flex flex-wrap gap-8 text-sm">
-            <Link href="#services" className="text-muted-foreground hover:text-foreground transition-colors">
-              Services
-            </Link>
-            <Link href="#approach" className="text-muted-foreground hover:text-foreground transition-colors">
-              Approach
-            </Link>
-            <Link href="#process" className="text-muted-foreground hover:text-foreground transition-colors">
-              Process
-            </Link>
-            <Link href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">
-              Contact
-            </Link>
+          {/* Navigate */}
+          <div>
+            <h5 className="text-[11px] font-mono uppercase tracking-wider text-muted-foreground mb-5">
+              Navigate
+            </h5>
+            <ul className="space-y-3">
+              {footerLinks.navigate.map((link) => (
+                <li key={link.href}>
+                  <Link 
+                    href={link.href} 
+                    className="text-sm text-[#e5e5e5] hover:text-foreground transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h5 className="text-[11px] font-mono uppercase tracking-wider text-muted-foreground mb-5">
+              Company
+            </h5>
+            <ul className="space-y-3">
+              {footerLinks.company.map((link) => (
+                <li key={link.href}>
+                  <Link 
+                    href={link.href} 
+                    className="text-sm text-[#e5e5e5] hover:text-foreground transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h5 className="text-[11px] font-mono uppercase tracking-wider text-muted-foreground mb-5">
+              Legal
+            </h5>
+            <ul className="space-y-3">
+              {footerLinks.legal.map((link) => (
+                <li key={link.href}>
+                  <Link 
+                    href={link.href} 
+                    className="text-sm text-[#e5e5e5] hover:text-foreground transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-border/30 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="pt-8 border-t border-border/20 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Formless Creature. All rights reserved.
           </p>
-          <div className="flex gap-6 text-sm">
-            <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-              Privacy
-            </Link>
-            <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-              Terms
-            </Link>
-          </div>
+          <p className="text-sm text-muted-foreground">
+            San Francisco
+          </p>
         </div>
       </div>
     </footer>
