@@ -98,9 +98,9 @@ export function Hero() {
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fcmarkonly-d2U4DaaK7ouPlnToLY1ezKlIMTFBXq.png"
                 alt="Formless Creature"
-                width={400}
-                height={400}
-                className="w-[78%] h-auto opacity-90"
+                width={200}
+                height={200}
+                className="w-[39%] h-auto opacity-90"
                 style={{ filter: "drop-shadow(0 0 40px rgba(187,222,242,0.25)) drop-shadow(0 0 80px rgba(209,170,215,0.15))" }}
                 priority
               />
