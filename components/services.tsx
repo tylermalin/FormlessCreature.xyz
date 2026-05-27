@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { motion } from "framer-motion"
 
 const practices = [
@@ -7,7 +8,6 @@ const practices = [
     badge: "Practice 01",
     name: "Growth Consulting",
     tagline: "Strategic and operational growth work for businesses with audience and ambition. Where most engagements begin.",
-    featured: true,
     lines: [
       { name: "Lifecycle Marketing", desc: "Email, SMS, retention infrastructure, bonus engines, attribution." },
       { name: "Paid Acquisition", desc: "Ads strategy and execution, CRM, performance marketing." },
@@ -21,7 +21,6 @@ const practices = [
     badge: "Practice 02",
     name: "AI Integration",
     tagline: "Bringing AI capabilities into operations and products. Where the legal-engineering background pays off.",
-    featured: false,
     lines: [
       { name: "AI Strategy & Roadmapping", desc: "Diagnostic, sequencing, ROI, risk. Most companies have a sequencing problem, not an AI problem." },
       { name: "Custom AI Development", desc: "Bespoke tools, agents, RAG systems, decision-support models." },
@@ -34,7 +33,6 @@ const practices = [
     badge: "Practice 03",
     name: "Automation",
     tagline: "Workflow and infrastructure automation. The plumbing layer that makes everything else faster.",
-    featured: false,
     lines: [
       { name: "Workflow Automation", desc: "Internal process automation. Zapier, Make, n8n, custom integrations." },
       { name: "Custom Internal Tools", desc: "Bespoke applications for operations, sales, finance, customer support." },
@@ -46,6 +44,8 @@ const practices = [
 ]
 
 export function Services() {
+  const [activeIndex, setActiveIndex] = useState(0)
+
   return (
     <section id="practices" className="py-24 lg:py-36 relative bg-[#020202]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -72,42 +72,48 @@ export function Services() {
         </motion.div>
 
         {/* Practices Grid */}
-        <div className="grid lg:grid-cols-3 gap-6">
-          {practices.map((practice, i) => (
-            <motion.div
-              key={practice.name}
-              className={`rounded-2xl p-10 flex flex-col gap-6 relative overflow-hidden group border ${
-                practice.featured
-                  ? "border-[#bbdef2]/20"
-                  : "border-border/30"
-              }`}
-              style={
-                practice.featured
-                  ? {
+        <div
+          className="grid lg:grid-cols-3 gap-6"
+          onMouseLeave={() => setActiveIndex(0)}
+        >
+          {practices.map((practice, i) => {
+            const isFeatured = i === activeIndex
+            return (
+              <motion.div
+                key={practice.name}
+                onMouseEnter={() => setActiveIndex(i)}
+                className="bg-[#020202] rounded-2xl p-10 flex flex-col gap-6 relative overflow-hidden group border border-border/30"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
+                {/* Shared layout-animated highlight — slides between cards */}
+                {isFeatured && (
+                  <motion.div
+                    layoutId="practice-highlight"
+                    aria-hidden="true"
+                    className="absolute pointer-events-none rounded-2xl border border-[#bbdef2]/25"
+                    style={{
+                      inset: "-1px",
                       background:
-                        "radial-gradient(ellipse at top left, rgba(187,222,242,0.06) 0%, transparent 60%), #020202",
-                    }
-                  : { background: "#020202" }
-              }
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-            >
-              {/* Spotlight effect */}
-              <div className="absolute inset-0 bg-[radial-gradient(600px_circle_at_var(--mouse-x,50%)_var(--mouse-y,50%),rgba(187,222,242,0.06),rgba(209,170,215,0.03)_30%,transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                        "radial-gradient(ellipse at top left, rgba(187,222,242,0.08) 0%, transparent 60%)",
+                    }}
+                    transition={{ type: "spring", bounce: 0.18, duration: 0.55 }}
+                  />
+                )}
 
-              <div className="relative z-10 flex flex-col gap-6">
-                <div className="flex flex-col gap-3">
-                  <span
-                    className={`inline-flex self-start text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-full border ${
-                      practice.featured
-                        ? "bg-gradient-to-r from-[#bbdef2] via-[#d1aad7] to-[#f4f0ff] text-background border-transparent font-medium"
-                        : "bg-foreground/5 text-muted-foreground border-border/30"
-                    }`}
-                  >
-                    {practice.badge}
-                  </span>
+                <div className="relative z-10 flex flex-col gap-6">
+                  <div className="flex flex-col gap-3">
+                    <span
+                      className={`inline-flex self-start text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-full border transition-colors duration-300 ${
+                        isFeatured
+                          ? "bg-gradient-to-r from-[#bbdef2] via-[#d1aad7] to-[#f4f0ff] text-background border-transparent font-medium"
+                          : "bg-foreground/5 text-muted-foreground border-border/30"
+                      }`}
+                    >
+                      {practice.badge}
+                    </span>
                   <h3 className="text-2xl lg:text-[28px] font-light tracking-tight leading-[1.1]">
                     {practice.name}
                   </h3>
@@ -135,7 +141,8 @@ export function Services() {
                 </div>
               </div>
             </motion.div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>
