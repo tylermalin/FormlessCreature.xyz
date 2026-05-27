@@ -173,3 +173,54 @@
   background: linear-gradient(var(--background), var(--background)) padding-box,
               linear-gradient(135deg, rgba(187, 222, 242, 0.3), rgba(209, 170, 215, 0.3), rgba(244, 240, 255, 0.3)) border-box;
 }
+
+/* ============================================================
+   Hero orbital animations
+   ============================================================ */
+@keyframes hero-orbit-cw {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes hero-orbit-ccw {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+@keyframes hero-ring-pulse {
+  0%, 100% { opacity: var(--pulse-low, 0.3); }
+  50%      { opacity: var(--pulse-high, 0.55); }
+}
+@keyframes hero-dot-pulse {
+  0%, 100% { opacity: 0.5; }
+  50%      { opacity: 1; }
+}
+
+/* Anything that orbits the hero viewBox center (200,200) */
+.hero-orbit-cw,
+.hero-orbit-ccw {
+  transform-origin: 200px 200px;
+  transform-box: view-box;
+  will-change: transform;
+}
+.hero-orbit-cw {
+  animation: hero-orbit-cw var(--orbit-duration, 24s) linear infinite;
+}
+.hero-orbit-ccw {
+  animation: hero-orbit-ccw var(--orbit-duration, 24s) linear infinite;
+}
+.hero-ring-pulse {
+  animation: hero-ring-pulse var(--pulse-duration, 7s) ease-in-out infinite;
+  will-change: opacity;
+}
+.hero-dot-pulse {
+  animation: hero-dot-pulse 3s ease-in-out infinite;
+  will-change: opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-orbit-cw,
+  .hero-orbit-ccw,
+  .hero-ring-pulse,
+  .hero-dot-pulse {
+    animation: none !important;
+  }
+}

@@ -67,7 +67,7 @@ export function Hero() {
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#bbdef2]/40 via-[#d1aad7]/30 to-[#f4f0ff]/20 blur-[80px] animate-float opacity-70" />
             <div className="absolute inset-0 w-1/2 h-1/2 top-[5%] right-[5%] rounded-full bg-[#bbdef2]/40 blur-[50px] animate-float opacity-55" style={{ animationDirection: "reverse", animationDuration: "10s" }} />
             
-            {/* Orbital SVG */}
+            {/* Orbital SVG — animated atomic motion */}
             <svg className="absolute inset-0 w-full h-full z-[1]" viewBox="0 0 400 400" fill="none">
               <defs>
                 <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
@@ -80,16 +80,74 @@ export function Hero() {
                   <stop offset="100%" stopColor="#bbdef2" stopOpacity="0.2"/>
                 </linearGradient>
               </defs>
-              <circle cx="200" cy="200" r="140" stroke="url(#g1)" strokeWidth="0.5" fill="none" opacity="0.6"/>
-              <circle cx="200" cy="200" r="100" stroke="url(#g1)" strokeWidth="0.5" fill="none" opacity="0.4"/>
-              <circle cx="200" cy="200" r="180" stroke="url(#g1)" strokeWidth="0.5" fill="none" opacity="0.3"/>
-              <ellipse cx="200" cy="200" rx="170" ry="60" stroke="url(#g2)" strokeWidth="1" fill="none" opacity="0.7" transform="rotate(-20 200 200)"/>
-              <ellipse cx="200" cy="200" rx="170" ry="60" stroke="url(#g2)" strokeWidth="1" fill="none" opacity="0.5" transform="rotate(20 200 200)"/>
-              <ellipse cx="200" cy="200" rx="170" ry="60" stroke="url(#g2)" strokeWidth="1" fill="none" opacity="0.4" transform="rotate(70 200 200)"/>
-              <circle cx="340" cy="200" r="2" fill="#bbdef2" opacity="0.8"/>
-              <circle cx="60" cy="200" r="2" fill="#d1aad7" opacity="0.8"/>
-              <circle cx="200" cy="40" r="2" fill="#f4f0ff" opacity="0.8"/>
-              <circle cx="200" cy="360" r="2" fill="#bbdef2" opacity="0.8"/>
+
+              {/* Concentric rings — opacity breath */}
+              <circle
+                cx="200" cy="200" r="100"
+                stroke="url(#g1)" strokeWidth="0.5" fill="none"
+                className="hero-ring-pulse"
+                style={{ ["--pulse-low" as string]: "0.25", ["--pulse-high" as string]: "0.55", ["--pulse-duration" as string]: "7s" }}
+              />
+              <circle
+                cx="200" cy="200" r="140"
+                stroke="url(#g1)" strokeWidth="0.5" fill="none"
+                className="hero-ring-pulse"
+                style={{ ["--pulse-low" as string]: "0.35", ["--pulse-high" as string]: "0.75", ["--pulse-duration" as string]: "9s", animationDelay: "-2s" }}
+              />
+              <circle
+                cx="200" cy="200" r="180"
+                stroke="url(#g1)" strokeWidth="0.5" fill="none"
+                className="hero-ring-pulse"
+                style={{ ["--pulse-low" as string]: "0.18", ["--pulse-high" as string]: "0.45", ["--pulse-duration" as string]: "11s", animationDelay: "-4.5s" }}
+              />
+
+              {/* Tilted orbital ellipses — continuously rotating at different speeds & directions.
+                  Negative animation-delay sets each one's starting tilt. */}
+              <ellipse
+                cx="200" cy="200" rx="170" ry="60"
+                stroke="url(#g2)" strokeWidth="1" fill="none" opacity="0.7"
+                className="hero-orbit-cw"
+                style={{ ["--orbit-duration" as string]: "24s", animationDelay: "-1.33s" }}
+              />
+              <ellipse
+                cx="200" cy="200" rx="170" ry="60"
+                stroke="url(#g2)" strokeWidth="1" fill="none" opacity="0.5"
+                className="hero-orbit-ccw"
+                style={{ ["--orbit-duration" as string]: "18s", animationDelay: "-1s" }}
+              />
+              <ellipse
+                cx="200" cy="200" rx="170" ry="60"
+                stroke="url(#g2)" strokeWidth="1" fill="none" opacity="0.4"
+                className="hero-orbit-cw"
+                style={{ ["--orbit-duration" as string]: "32s", animationDelay: "-6.22s" }}
+              />
+
+              {/* Satellite dots — each orbits center at its own period.
+                  Outer <g> handles rotation, inner circle handles brightness pulse. */}
+              <g
+                className="hero-orbit-cw"
+                style={{ ["--orbit-duration" as string]: "28s" }}
+              >
+                <circle cx="340" cy="200" r="2" fill="#bbdef2" className="hero-dot-pulse" />
+              </g>
+              <g
+                className="hero-orbit-ccw"
+                style={{ ["--orbit-duration" as string]: "20s" }}
+              >
+                <circle cx="60" cy="200" r="2" fill="#d1aad7" className="hero-dot-pulse" style={{ animationDelay: "-1s" }} />
+              </g>
+              <g
+                className="hero-orbit-cw"
+                style={{ ["--orbit-duration" as string]: "36s" }}
+              >
+                <circle cx="200" cy="40" r="2" fill="#f4f0ff" className="hero-dot-pulse" style={{ animationDelay: "-1.7s" }} />
+              </g>
+              <g
+                className="hero-orbit-ccw"
+                style={{ ["--orbit-duration" as string]: "24s" }}
+              >
+                <circle cx="200" cy="360" r="2" fill="#bbdef2" className="hero-dot-pulse" style={{ animationDelay: "-0.4s" }} />
+              </g>
             </svg>
             
             <div className="relative flex items-center justify-center h-full z-[2]">
