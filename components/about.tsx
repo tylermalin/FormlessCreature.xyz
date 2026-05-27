@@ -21,7 +21,7 @@ export function About() {
               </span>
             </div>
             <blockquote className="text-2xl lg:text-3xl xl:text-4xl font-light tracking-tight leading-[1.3] mb-8">
-              {'"The retention problem most platforms face is the same operational problem I solved repeatedly for Fortune 500 marketing teams at Idea Farmer. The vertical changes, the channels evolve, but the underlying system stays the same."'}
+              {'"I built and sold a digital agency that did everything. The lesson was that integration is the hard part, not the capability. Formless Creature is the integration, run by someone who has actually shipped the work."'}
             </blockquote>
             <cite className="text-sm font-mono text-muted-foreground tracking-wider uppercase not-italic">
               Tyler Malin, Formless Creature
@@ -40,18 +40,18 @@ export function About() {
             
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
-                Founder of Idea Farmer, a digital marketing agency that ranked #95 on the Inc. 500. 
-                Built and ran lifecycle, audience strategy, and digital marketing execution for global brands 
+                Founder of Idea Farmer, a digital marketing agency that ranked #95 on the Inc. 500.
+                Built and ran lifecycle marketing, audience strategy, paid acquisition, and content execution for global brands
                 including Whirlpool, Toyota, Microsoft, and Dreamworks. Idea Farmer was acquired by Maker Studios.
               </p>
               <p>
-                Prior to that, founded and exited Social Animal, a VR gaming and panoramic video startup. 
-                The legal-engineering background comes from earlier work as a litigation associate at Cravath Swaine & Moore, 
+                Prior to that, founded and exited Social Animal, a VR gaming and panoramic video startup.
+                The legal-engineering background comes from earlier work as a litigation associate at Cravath Swaine & Moore,
                 a regulatory fellow at the CFTC during post-Enron enforcement, and labor and IP law practice.
               </p>
               <p>
-                Currently CEO and Co-Founder of Mālama Labs, a seed-stage climate infrastructure platform. 
-                Formless Creature is the consulting vehicle through which retention engagements run.
+                Currently CEO and Co-Founder of Mālama Labs, a seed-stage climate infrastructure platform building the AICo2 methodology referenced in the AI Governance service line.
+                Formless Creature is the consulting vehicle through which growth, AI, and automation engagements run.
               </p>
             </div>
 
@@ -60,7 +60,7 @@ export function About() {
                 { label: "Built & sold", value: "Idea Farmer (Inc. 500 #95, acq. Maker Studios). Social Animal (VR)." },
                 { label: "Clients", value: "Whirlpool, Toyota, Microsoft, Dreamworks, others." },
                 { label: "Legal", value: "Cravath Swaine & Moore. CFTC fellow. JD, Fordham." },
-                { label: "Current", value: "CEO, Mālama Labs." },
+                { label: "Current", value: "CEO, Mālama Labs. AICo2 methodology author." },
               ].map((cred, i) => (
                 <div key={i} className="grid grid-cols-[80px_1fr] gap-4 text-sm items-baseline">
                   <span className="font-mono text-muted-foreground tracking-wider uppercase text-[10px]">

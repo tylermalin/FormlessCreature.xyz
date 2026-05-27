@@ -6,28 +6,28 @@ import { Plus } from "lucide-react"
 
 const faqs = [
   {
-    question: "What kind of platforms do you work with?",
-    answer: "Platforms with working acquisition and a measurable retention problem. Typically pre-seed to Series B. We are especially well-suited to platforms operating in regulated or regulated-adjacent categories: sweepstakes mechanics, crypto-adjacent fintech, prediction markets, anywhere TCPA and state gaming law actually matter to the build.",
+    question: "How does one consultancy deliver across sixteen service lines?",
+    answer: "Two partners on every engagement, plus a hand-selected bench of specialists for execution depth in specific disciplines. Some service lines we deliver directly. Others run through specialists under our coordination. We tell you which is which at the engagement letter, not after the contract is signed. The delivery model section explains the structure.",
   },
   {
-    question: "How is this different from a Klaviyo agency?",
-    answer: "A traditional Klaviyo agency produces campaigns and designs creative. We build the infrastructure underneath them: segmentation logic, the bonus engine, attribution architecture, compliance scaffolding. We are the operating system, not the campaigns. If you also need ongoing creative production, that is a separate vendor (and we can recommend partners).",
+    question: "Can we engage you on just one service line?",
+    answer: "Yes. Most engagements start with one service line, usually Lifecycle Marketing, AI Strategy, or Workflow Automation. The other service lines are available when you need them and they make sense to add. We do not push integrated engagement as a requirement. The integration is a benefit when it applies, not a sales tactic.",
   },
   {
-    question: "What if we already have Klaviyo set up?",
-    answer: "Most clients do. We audit what exists, keep what works, rebuild what does not. The infrastructure we build sits on top of Klaviyo (or migrates to it). We are not replacing your ESP; we are building the decision layer that makes it perform.",
+    question: "What kind of companies do you work with?",
+    answer: "Companies with audience and ambition. Typically pre-seed to Series B for the Growth practice, established mid-market and enterprise for AI Integration and Governance work. We are especially well-suited to companies operating in regulated or regulated-adjacent categories: sweepstakes mechanics, crypto-adjacent fintech, prediction markets, and anywhere TCPA, EU AI Act, or state law actually matters to the build.",
   },
   {
-    question: "How do you measure performance?",
-    answer: "We establish a 90-day pre-engagement baseline using your production data. Attribution is instrumented from day one. We report monthly against cohort LTV, retention curves, and revenue directly attributable to the systems we built. If we cannot prove the lift, we did not produce it.",
+    question: "How does pricing work across different services?",
+    answer: "We use four engagement patterns across the practices: diagnostic / audit, fixed-fee deliverable, project build + retainer, and project build + performance share. The Engagement section walks through each one and which service lines they typically apply to. AI Governance and AI Strategy engagements are usually fixed-fee deliverables. Custom AI Development is scoped by build complexity. Lifecycle Marketing engagements often use build + retainer or build + performance share. Hybrid structures are common when the work calls for it. We quote each engagement explicitly. No hidden line items.",
   },
   {
-    question: "What is the time commitment on our side?",
-    answer: "Light. We need a 30-minute scoping call, read access to your production database, and a point of contact for questions during the build. Most clients spend 2-4 hours total during the 4-week build phase. After launch, the monthly reporting call is 30 minutes.",
+    question: "What does the free audit actually produce?",
+    answer: "A short written diagnostic covering your current state, the highest-leverage opportunities in your data or operations, and what an engagement would actually build. Written for leadership consumption, not for a marketing manager. The audit is unconditional. If we are not the right fit, we say so. If you are not ready, we say that too.",
   },
   {
-    question: "Can we start with just the audit?",
-    answer: "Yes. The audit is free. It produces a written diagnostic of your funnel, your retention metrics, and the highest-leverage levers in your data. If we are not the right fit, we say so. No obligation to proceed.",
+    question: "Do you have legal and compliance expertise in-house?",
+    answer: "Yes. Tyler holds a JD from Fordham and practiced as a litigation associate at Cravath Swaine & Moore (Time Warner-FTC merger work) and as a regulatory fellow at the CFTC during post-Enron enforcement. Lifecycle Marketing engagements include TCPA, CAN-SPAM, and sweepstakes review. AI Integration engagements include EU AI Act Article 53 and CSRD compliance work. Legal capability is a built-in feature, not a referral to outside counsel.",
   },
 ]
 

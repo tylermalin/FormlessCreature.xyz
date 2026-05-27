@@ -2,51 +2,39 @@
 
 import { motion } from "framer-motion"
 
-const comparisonData = {
-  traditional: {
-    title: "Traditional Klaviyo agency",
-    subtitle: "Mid-tier retainer model",
-    items: [
-      "Account manager focused on campaign deliverables",
-      "Generic SOPs adapted from prior ecommerce clients",
-      "Static flow templates with limited A/B testing",
-      "Reports vanity metrics (opens, CTR) over revenue",
-      "$4,500-$7,500 monthly retainer, paid regardless of lift",
-      "Performance plateaus after initial setup",
-    ],
+const points = [
+  {
+    num: "01",
+    title: "Partner-level accountability on every engagement",
+    description:
+      "One of the two of us is on every call, every weekly check-in, every deliverable. Specialists do not own the client relationship. The buck stops with us.",
   },
-  formless: {
-    title: "Our model",
-    subtitle: "Infrastructure build with optional ongoing partnership",
-    items: [
-      "Founder-operator with lifecycle and legal-engineering background",
-      "Custom architecture built around your data and your funnel",
-      "Bonus engine and measurement layer most agencies do not build",
-      "Reports against revenue, retention, and cohort LTV",
-      "$20K upfront priced at cost, retainer or performance share after",
-      "Compliance baked in (TCPA, sweepstakes, bonus structures)",
-    ],
+  {
+    num: "02",
+    title: "Hand-selected bench, per engagement",
+    description:
+      "Coders, designers, producers, directors, data engineers, creatives. Dozens of relationships built over years of working together. We pick the right people for the specific work in front of us, not whoever happens to be on a bullpen this quarter.",
   },
-  inhouse: {
-    title: "In-house hire",
-    subtitle: "Single senior lifecycle marketer",
-    items: [
-      "One person with limited channel and platform breadth",
-      "Needs direction, technical scaffolding, and management",
-      "Inconsistent testing without clear leverage analysis",
-      "High fixed cost, slow ramp, narrow legal awareness",
-      "$150K-$250K loaded salary plus tooling",
-      "12+ months to reach the output a built system produces in 4 weeks",
-    ],
+  {
+    num: "03",
+    title: "No project management tax",
+    description:
+      "You do not pay for a layer of account managers translating between specialists and you. We are the translation layer, the strategy layer, and the operators coordinating execution.",
   },
-}
+  {
+    num: "04",
+    title: "Honest about scope",
+    description:
+      "Some work we execute directly. Some runs through specialists under our coordination. We tell you which is which at the engagement letter, not after the contract is signed.",
+  },
+]
 
 export function Comparison() {
   return (
-    <section className="py-24 lg:py-36 relative">
+    <section id="delivery" className="py-24 lg:py-36 relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           className="max-w-3xl mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -56,85 +44,61 @@ export function Comparison() {
           <div className="inline-flex items-center gap-3 mb-6">
             <span className="w-6 h-px bg-muted-foreground" />
             <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
-              A different shape
+              How we deliver
             </span>
           </div>
           <h2 className="text-4xl lg:text-5xl xl:text-6xl font-light tracking-tight leading-[1.05] mb-6">
-            What we are not.
+            Two partners. A hand-selected specialist bench per engagement. No subcontracting through anonymous marketplaces.
           </h2>
           <p className="text-lg text-[#f4f0ff] leading-relaxed">
-            There are good reasons to hire a traditional Klaviyo agency. There are good reasons to bring lifecycle in-house. 
-            There are some reasons to work with us instead. Worth being honest about all three.
+            A fair question worth answering up front: how does one consultancy deliver across sixteen service lines without becoming a Fiverr middleman or selling more than it can ship? The honest answer is the operating model itself.
           </p>
         </motion.div>
 
-        {/* Comparison Grid */}
-        <div className="grid lg:grid-cols-3 gap-6">
-          {/* Traditional Agency */}
+        {/* Delivery Grid */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+          {/* Statement */}
           <motion.div
-            className="bg-[#020202] border border-border/30 rounded-2xl p-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6 }}
           >
-            <h4 className="text-xl lg:text-[22px] font-normal tracking-tight mb-2">{comparisonData.traditional.title}</h4>
-            <p className="text-sm text-muted-foreground mb-6">{comparisonData.traditional.subtitle}</p>
-            <ul className="space-y-3.5">
-              {comparisonData.traditional.items.map((item, i) => (
-                <li key={i} className="text-sm text-[#e5e5e5] leading-snug pl-6 relative">
-                  <span className="absolute left-0 top-2 w-3 h-px bg-muted-foreground" />
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <p className="text-2xl lg:text-[32px] font-light tracking-tight leading-[1.25] mb-8">
+              Every engagement is run by the two of us. Where the work requires specific bandwidth or domain depth, we pull from a bench of coders, designers, producers, directors, data engineers, and creatives we have worked with for years and would hire again. Specialists are selected per engagement based on the actual scope, not assigned by a staffing layer. No anonymous talent. No project management overhead billed back to the client.
+            </p>
+            <p className="text-base text-muted-foreground leading-relaxed">
+              The result is operator-level coordination across disciplines that traditional agencies treat as separate cost centers. You get the depth of specialists, the continuity of partners who stay on the engagement start to finish, and one place to call when something needs to move.
+            </p>
           </motion.div>
 
-          {/* Formless Creature - Featured */}
-          <motion.div
-            className="rounded-2xl p-8 relative border border-[#bbdef2]/30"
-            style={{ background: "linear-gradient(180deg, rgba(187,222,242,0.05) 0%, rgba(0,0,0,0) 100%)" }}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            <div className="absolute -top-2.5 left-6">
-              <span className="text-[11px] font-mono uppercase tracking-wider bg-gradient-to-r from-[#bbdef2] via-[#d1aad7] to-[#f4f0ff] text-background px-3 py-1 rounded-full font-medium">
-                Formless Creature
-              </span>
-            </div>
-            <h4 className="text-xl lg:text-[22px] font-normal tracking-tight mb-2 mt-2">{comparisonData.formless.title}</h4>
-            <p className="text-sm text-muted-foreground mb-6">{comparisonData.formless.subtitle}</p>
-            <ul className="space-y-3.5">
-              {comparisonData.formless.items.map((item, i) => (
-                <li key={i} className="text-sm text-[#e5e5e5] leading-snug pl-6 relative">
-                  <span className="absolute left-0 top-2 w-3 h-px bg-[#bbdef2]" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* In-House */}
-          <motion.div
-            className="bg-[#020202] border border-border/30 rounded-2xl p-8"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <h4 className="text-xl lg:text-[22px] font-normal tracking-tight mb-2">{comparisonData.inhouse.title}</h4>
-            <p className="text-sm text-muted-foreground mb-6">{comparisonData.inhouse.subtitle}</p>
-            <ul className="space-y-3.5">
-              {comparisonData.inhouse.items.map((item, i) => (
-                <li key={i} className="text-sm text-[#e5e5e5] leading-snug pl-6 relative">
-                  <span className="absolute left-0 top-2 w-3 h-px bg-muted-foreground" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+          {/* Numbered points */}
+          <div className="flex flex-col">
+            {points.map((point, i) => (
+              <motion.div
+                key={point.title}
+                className={`grid grid-cols-[36px_1fr] gap-4 items-start py-5 ${
+                  i !== 0 ? "border-t border-border/20" : ""
+                }`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+              >
+                <span className="text-[11px] font-mono text-muted-foreground tracking-wider pt-1">
+                  {point.num}
+                </span>
+                <div>
+                  <h4 className="text-lg font-normal tracking-tight mb-1.5">
+                    {point.title}
+                  </h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {point.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

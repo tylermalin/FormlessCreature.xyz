@@ -1,43 +1,43 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
-import Link from "next/link"
 
-const options = [
+const patterns = [
   {
-    tag: "Option A — Comprehensive",
-    title: "Build + Monthly Retainer",
-    price: "$20K",
-    priceDetail: "+ $6K/mo",
-    priceUnit: "Total $92,000 over 12 months",
-    items: [
-      "Build of email, SMS, bonus engine, and measurement layer",
-      "Ongoing flow optimization and A/B testing",
-      "One new lifecycle flow added per quarter",
-      "Monthly performance reporting and quarterly strategic review",
-      "Compliance updates and attribution dashboard maintenance",
-      "Klaviyo and SMS platform pass-through up to $500/mo included",
-    ],
-    bestFor: "Best if you want predictable monthly spend, continuous partnership, and quarterly expansion baked into the engagement.",
+    tag: "Pattern 01",
+    title: "Diagnostic / Audit",
+    subtitle: "Where most engagements begin",
+    description:
+      "A scoped review of your current state, the highest-leverage opportunities in your data or operations, and what an engagement would actually build. Some are free (lifecycle audits, AI strategy intros). Others are fixed-fee deliverables (governance audits, EU AI Act Article 53 reviews). The diagnostic decides whether we move forward, and what shape that takes.",
+    applies: "Used across every practice.",
     featured: false,
   },
   {
-    tag: "Option B — Performance",
-    title: "Build + Commission on Lift",
-    price: "$20K",
-    priceDetail: "+ 20% of lift",
-    priceUnit: "Capped at $250K. No floor. 12-month measurement.",
-    items: [
-      "Build of email, SMS, bonus engine, and measurement layer",
-      "Hand-off at Week 8 with full documentation",
-      "90 days of post-launch support included",
-      "Monthly attribution reports for the 12-month measurement window",
-      "Performance share measured against 90-day pre-engagement baseline",
-      "Carve-outs for new product launches, IRL activations, single deposits over $5K",
-    ],
-    bestFor: "Best if you have internal capacity to operate the system post-launch and want our compensation aligned with actual results.",
+    tag: "Pattern 02",
+    title: "Fixed-Fee Deliverable",
+    subtitle: "Strategy, governance, defined artifacts",
+    description:
+      "When the output is a concrete artifact. We scope the work, quote a number, deliver against it. No retainer creep, no surprise scope expansion. Examples include AI strategy roadmaps, AI governance documentation, brand identity systems, and data architecture audits.",
+    applies: "AI Strategy & Roadmapping, AI Governance & Compliance, Brand & Design discovery, Data & Analytics audits.",
+    featured: false,
+  },
+  {
+    tag: "Pattern 03",
+    title: "Project Build + Retainer",
+    subtitle: "Build and operate",
+    description:
+      "For systems we build and then operate alongside your team, or hand off with ongoing oversight. A fixed build fee, then a monthly retainer for continuous partnership. Quarterly scope reviews, no auto-renewing lock-in, transparent on what each month buys.",
+    applies: "Lifecycle Marketing infrastructure, Custom AI Development, Workflow Automation, Custom Internal Tools, ongoing Paid Acquisition.",
     featured: true,
+  },
+  {
+    tag: "Pattern 04",
+    title: "Project Build + Performance Share",
+    subtitle: "Aligned compensation tied to outcomes",
+    description:
+      "Where attribution is clean and outcomes are measurable, we will build at cost and share in the lift over a defined measurement window. Selectively offered. We do not propose this for work where the outcome cannot be cleanly measured, because tying compensation to a number nobody trusts is bad for both sides.",
+    applies: "Lifecycle Marketing, Paid Acquisition, select CRO engagements.",
+    featured: false,
   },
 ]
 
@@ -46,7 +46,7 @@ export function Engagement() {
     <section id="engagement" className="py-24 lg:py-36 relative bg-[#020202]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           className="max-w-3xl mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -60,68 +60,69 @@ export function Engagement() {
             </span>
           </div>
           <h2 className="text-4xl lg:text-5xl xl:text-6xl font-light tracking-tight leading-[1.05] mb-6">
-            Two paths forward. Same build. Pick the path that fits.
+            How engagements are structured.
           </h2>
           <p className="text-lg text-[#f4f0ff] leading-relaxed">
-            Both options start with the same $20,000 upfront fee that covers the 4-week build at cost. 
-            From there, choose: continuous partnership at a fixed monthly rate, or aligned compensation tied to actual lift. 
-            Both are real choices.
+            Different work calls for different structures. We use four patterns across the sixteen service lines, and we tell you which one fits at the engagement letter, not after the contract is signed. Every quote is explicit. No project management tax. No discovery phase billed at full rate before scope is locked.
           </p>
         </motion.div>
 
-        {/* Pricing Cards */}
+        {/* Pattern Cards */}
         <div className="grid lg:grid-cols-2 gap-6">
-          {options.map((option, i) => (
+          {patterns.map((pattern, i) => (
             <motion.div
-              key={option.title}
-              className={`rounded-2xl p-10 lg:p-12 flex flex-col gap-6 relative border ${
-                option.featured 
-                  ? "border-[#d1aad7]/30" 
+              key={pattern.title}
+              className={`rounded-2xl p-10 lg:p-12 flex flex-col gap-5 relative overflow-hidden border ${
+                pattern.featured
+                  ? "border-[#d1aad7]/30"
                   : "border-border/30"
               }`}
-              style={option.featured ? { 
-                background: "radial-gradient(ellipse at top left, rgba(209,170,215,0.08) 0%, transparent 60%), #020202" 
-              } : { background: "#020202" }}
+              style={
+                pattern.featured
+                  ? {
+                      background:
+                        "radial-gradient(ellipse at top left, rgba(209,170,215,0.08) 0%, transparent 60%), #020202",
+                    }
+                  : { background: "#020202" }
+              }
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
             >
-              <span className={`inline-flex self-start text-[11px] font-mono uppercase tracking-wider px-3 py-1.5 rounded-full border ${
-                option.featured 
-                  ? "bg-gradient-to-r from-[#bbdef2] via-[#d1aad7] to-[#f4f0ff] text-background border-transparent" 
-                  : "bg-foreground/5 text-muted-foreground border-border/30"
-              }`}>
-                {option.tag}
+              <span
+                className={`inline-flex self-start text-[11px] font-mono uppercase tracking-wider px-3 py-1.5 rounded-full border ${
+                  pattern.featured
+                    ? "bg-gradient-to-r from-[#bbdef2] via-[#d1aad7] to-[#f4f0ff] text-background border-transparent"
+                    : "bg-foreground/5 text-muted-foreground border-border/30"
+                }`}
+              >
+                {pattern.tag}
               </span>
-              
-              <h3 className="text-2xl lg:text-[28px] font-light tracking-tight">{option.title}</h3>
-              
+
               <div>
-                <div className="text-4xl font-light tracking-tight">
-                  {option.price} <span className="text-muted-foreground text-[28px]">{option.priceDetail}</span>
-                </div>
-                <div className="text-sm text-muted-foreground mt-1">{option.priceUnit}</div>
+                <h3 className="text-2xl lg:text-[28px] font-light tracking-tight leading-[1.15]">
+                  {pattern.title}
+                </h3>
+                <p className="text-sm text-muted-foreground italic mt-2">
+                  {pattern.subtitle}
+                </p>
               </div>
-              
-              <ul className="space-y-3 mt-2">
-                {option.items.map((item, j) => (
-                  <li key={j} className="text-sm text-[#e5e5e5] leading-snug pl-7 relative">
-                    <span className="absolute left-0 top-[7px] w-3.5 h-2 border-l-[1.5px] border-b-[1.5px] border-[#bbdef2] rotate-[-45deg]" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              
-              <div className="text-sm text-muted-foreground italic border-t border-border/30 pt-5 mt-auto">
-                {option.bestFor}
+
+              <p className="text-[15px] text-[#e5e5e5] leading-relaxed">
+                {pattern.description}
+              </p>
+
+              <div className="text-xs font-mono text-muted-foreground tracking-wide border-t border-border/30 pt-5 mt-auto">
+                <span className="uppercase opacity-70">Where it fits — </span>
+                <span className="normal-case opacity-90">{pattern.applies}</span>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Note */}
-        <motion.div 
+        {/* Pricing transparency note */}
+        <motion.div
           className="mt-10 p-6 lg:p-7 bg-[#020202] border-l-2 border-[#bbdef2] rounded-r"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -129,7 +130,7 @@ export function Engagement() {
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           <p className="text-sm text-[#e5e5e5] leading-relaxed">
-            <strong className="text-foreground font-medium">A note on the honest math.</strong> Option B is materially cheaper for clients in every realistic performance scenario. Option A is structurally better for us in most realistic outcomes. We offer both because the right structure depends on what you need, not on what maximizes our compensation. If neither lands cleanly, we are open to negotiating a hybrid.
+            <strong className="text-foreground font-medium">A note on pricing.</strong> Pricing scales with scope, not with how much we can extract. Quotes are explicit and itemized. If a piece of work goes to a specialist on our bench, you see that in the engagement letter. If it runs through us directly, that is also clear. Hybrid structures across the four patterns are common; we are happy to design one that fits how you actually buy.
           </p>
         </motion.div>
       </div>

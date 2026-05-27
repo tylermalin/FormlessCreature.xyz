@@ -5,29 +5,34 @@ import { motion } from "framer-motion"
 const pillars = [
   {
     num: "01",
-    title: "Infrastructure over campaigns",
-    description: "A campaign is a single send. An infrastructure is the engine that decides which user gets which message on which channel with which offer. We build the second one. The first one falls out of it.",
+    title: "Partner-level accountability",
+    description: "Every engagement runs through the two of us. When growth, AI, and automation are owned by the same partners, decisions get made in hours instead of weeks, attribution is coherent across channels, and vendor finger-pointing stops being a project risk.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5 text-background">
-        <path d="M3 12h4l3-9 4 18 3-9h4"/>
+        <circle cx="12" cy="12" r="3"/>
+        <circle cx="12" cy="3" r="1.5"/>
+        <circle cx="21" cy="12" r="1.5"/>
+        <circle cx="12" cy="21" r="1.5"/>
+        <circle cx="3" cy="12" r="1.5"/>
+        <path d="M12 6v3M15 12h3M12 15v3M6 12h3"/>
       </svg>
     ),
   },
   {
     num: "02",
-    title: "Measurement before margin",
-    description: "We define the baseline before the work begins, instrument attribution into the system from day one, and report against it monthly. If we cannot prove the lift, we did not produce it. That principle is structural, not aspirational.",
+    title: "Disciplines that actually compound",
+    description: "Paid acquisition without lifecycle is leaky. AI without growth strategy is a toy. Automation without data infrastructure is fragile. The compound returns come from disciplines that reinforce each other, not from spending more on any single channel.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5 text-background">
-        <circle cx="12" cy="12" r="9"/>
-        <path d="M12 7v5l3 3"/>
+        <path d="M3 12c0-5 4-9 9-9s9 4 9 9-4 9-9 9-9-4-9-9z"/>
+        <path d="M3 12h18M12 3v18"/>
       </svg>
     ),
   },
   {
     num: "03",
-    title: "Compliance as a feature",
-    description: "TCPA, CAN-SPAM, state sweepstakes law, and promotional bonus structures are not adjacent concerns. They are part of the build. We engineer them in from the consent flow forward, not as a legal review at the end.",
+    title: "Partners who have done the work",
+    description: "You are not hiring a brand. You are hiring partners who have built and sold an Inc. 500 digital agency with clients like Whirlpool, Toyota, Microsoft, and Dreamworks, worked regulatory enforcement at the CFTC, and ship infrastructure across every layer of the stack we now sell.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5 text-background">
         <path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4z"/>
@@ -55,12 +60,10 @@ export function Approach() {
             </span>
           </div>
           <h2 className="text-4xl lg:text-5xl xl:text-6xl font-light tracking-tight leading-[1.05] mb-6">
-            We are not a creative agency. We are the operating system underneath one.
+            Five vendors stitched together is a project plan. We are a team.
           </h2>
           <p className="text-lg text-[#f4f0ff] leading-relaxed">
-            Most retention vendors sell campaigns. We build the systems that make campaigns work. 
-            The decision layer underneath email and SMS, the bonus engine that targets specific behavior changes, 
-            the attribution layer that proves it. Three principles drive everything we ship.
+            Most growth problems are not capability problems. They are coordination problems. A paid acquisition agency does not talk to your lifecycle vendor. Your AI consultant does not talk to your CRO partner. Your data team is operating downstream of everyone. Decisions get made in vacuums, attribution is broken, and the compound effect of integrated execution never materializes. Three principles drive how we run engagements differently.
           </p>
         </motion.div>
 

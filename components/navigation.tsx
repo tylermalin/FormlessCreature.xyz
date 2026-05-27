@@ -6,11 +6,11 @@ import { useState } from "react"
 import { Menu, X, ArrowRight } from "lucide-react"
 
 const navLinks = [
-  { href: "#approach", label: "Approach" },
-  { href: "#services", label: "Services" },
-  { href: "#engagement", label: "Engagement" },
-  { href: "#process", label: "Process" },
-  { href: "#about", label: "About" },
+  { href: "/#approach", label: "Approach" },
+  { href: "/#practices", label: "Practices" },
+  { href: "/#delivery", label: "Delivery" },
+  { href: "/#engagement", label: "Engagement" },
+  { href: "/#about", label: "About" },
 ]
 
 export function Navigation() {
@@ -21,7 +21,7 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-[72px]">
           {/* Logo */}
-          <Link href="#top" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3">
             <Image
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fcmarkonly-d2U4DaaK7ouPlnToLY1ezKlIMTFBXq.png"
               alt="Formless Creature"
@@ -49,7 +49,7 @@ export function Navigation() {
 
           {/* CTA */}
           <Link 
-            href="#contact" 
+            href="/audit"
             className="hidden md:inline-flex items-center gap-2 text-sm bg-foreground text-background px-5 py-3 rounded-2xl font-medium hover:bg-transparent hover:text-foreground border border-foreground transition-all"
           >
             Free audit
@@ -82,7 +82,7 @@ export function Navigation() {
               </Link>
             ))}
             <Link 
-              href="#contact" 
+              href="/audit"
               onClick={() => setIsOpen(false)}
               className="flex items-center justify-center gap-2 text-lg bg-foreground text-background px-5 py-3 rounded-2xl font-medium text-center hover:bg-foreground/90 transition-colors mt-6"
             >

@@ -3,19 +3,20 @@ import Link from "next/link"
 
 const footerLinks = {
   navigate: [
-    { href: "#approach", label: "Approach" },
-    { href: "#services", label: "Services" },
-    { href: "#engagement", label: "Engagement" },
-    { href: "#process", label: "Process" },
+    { href: "/#approach", label: "Approach" },
+    { href: "/#practices", label: "Practices" },
+    { href: "/#delivery", label: "Delivery" },
+    { href: "/#engagement", label: "Engagement" },
+    { href: "/#process", label: "Process" },
   ],
   company: [
-    { href: "#about", label: "About Tyler" },
-    { href: "#faq", label: "FAQ" },
-    { href: "#contact", label: "Contact" },
+    { href: "/#about", label: "About" },
+    { href: "/#faq", label: "FAQ" },
+    { href: "/#contact", label: "Contact" },
   ],
-  legal: [
-    { href: "#", label: "Privacy" },
-    { href: "#", label: "Terms" },
+  connect: [
+    { href: "/audit", label: "Request audit" },
+    { href: "mailto:tyler@formlesscreature.xyz", label: "tyler@formlesscreature.xyz" },
   ],
 }
 
@@ -34,21 +35,20 @@ export function Footer() {
               className="h-auto w-[180px] mb-4"
             />
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
-              Retention infrastructure for platforms. Email, SMS, promotional bonus engines, 
-              and the compliance architecture underneath them.
+              Consulting for growth, AI integration, and automation. Two partners, hand-selected specialist bench, sixteen service lines across three practices.
             </p>
           </div>
 
-          {/* Navigate */}
+          {/* The work */}
           <div>
             <h5 className="text-[11px] font-mono uppercase tracking-wider text-muted-foreground mb-5">
-              Navigate
+              The work
             </h5>
             <ul className="space-y-3">
               {footerLinks.navigate.map((link) => (
                 <li key={link.href}>
-                  <Link 
-                    href={link.href} 
+                  <Link
+                    href={link.href}
                     className="text-sm text-[#e5e5e5] hover:text-foreground transition-colors"
                   >
                     {link.label}
@@ -66,8 +66,8 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.href}>
-                  <Link 
-                    href={link.href} 
+                  <Link
+                    href={link.href}
                     className="text-sm text-[#e5e5e5] hover:text-foreground transition-colors"
                   >
                     {link.label}
@@ -77,16 +77,16 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Legal */}
+          {/* Connect */}
           <div>
             <h5 className="text-[11px] font-mono uppercase tracking-wider text-muted-foreground mb-5">
-              Legal
+              Connect
             </h5>
             <ul className="space-y-3">
-              {footerLinks.legal.map((link) => (
+              {footerLinks.connect.map((link) => (
                 <li key={link.href}>
-                  <Link 
-                    href={link.href} 
+                  <Link
+                    href={link.href}
                     className="text-sm text-[#e5e5e5] hover:text-foreground transition-colors"
                   >
                     {link.label}
@@ -99,10 +99,10 @@ export function Footer() {
 
         <div className="pt-8 border-t border-border/20 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Formless Creature. All rights reserved.
+            © {new Date().getFullYear()} Formless Creature LLC. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground">
-            San Francisco
+            Two partners. Three practices. Sixteen service lines.
           </p>
         </div>
       </div>

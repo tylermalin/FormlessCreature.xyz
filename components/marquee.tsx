@@ -1,18 +1,22 @@
 "use client"
 
 const capabilities = [
-  "TCPA Compliance",
-  "Klaviyo Architecture",
-  "Attribution Layer",
-  "Bonus Engines",
-  "Lifecycle Systems",
-  "Cohort Analytics",
-  "Sweepstakes Law",
-  "SMS Deliverability",
-  "Segmentation",
-  "Win-back Sequences",
-  "Loyalty Architecture",
-  "Subscription Models",
+  "Growth Strategy",
+  "Lifecycle Marketing",
+  "Paid Acquisition",
+  "Conversion Optimization",
+  "Brand & Design",
+  "Content & Creative",
+  "Data & Analytics",
+  "AI Strategy",
+  "AI Governance",
+  "EU AI Act Compliance",
+  "Custom AI Development",
+  "Agent Infrastructure",
+  "Workflow Automation",
+  "API Orchestration",
+  "Data Pipelines",
+  "Custom Internal Tools",
 ]
 
 export function Marquee() {

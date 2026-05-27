@@ -11,7 +11,7 @@ const steps = [
   {
     num: "STEP 02",
     title: "Baseline & engagement letter",
-    description: "Establish the 90-day pre-engagement baseline (Option B), define carve-outs, lock the build scope, sign engagement letter. Production database read access is set up for measurement.",
+    description: "Establish the pre-engagement baseline, define carve-outs, lock the build scope, sign the engagement letter. For performance-share patterns, production database read access is set up for measurement. The pricing pattern (fixed-fee, retainer, or performance share) is selected here, before any build work begins.",
   },
   {
     num: "STEP 03",
@@ -26,12 +26,12 @@ const steps = [
   {
     num: "STEP 05",
     title: "Operate & report",
-    description: "Monthly attribution reports. Quarterly performance review. Either ongoing partnership (Option A) or measured hand-off (Option B). System tunes itself over time as data accumulates.",
+    description: "Monthly attribution reports. Quarterly performance review. Either ongoing partnership (retainer pattern) or measured hand-off (performance share pattern). System tunes itself over time as data accumulates.",
   },
   {
     num: "STEP 06",
     title: "True up",
-    description: "Final attribution report at Month 17. Performance share invoiced (Option B) or retainer concludes (Option A). System remains operational under your control. We are paid for what we produced.",
+    description: "Final report at the end of the measurement window. Performance share invoiced or retainer concludes, depending on the pattern. The system remains operational under your control. We are paid for what we produced.",
   },
 ]
 
@@ -50,15 +50,14 @@ export function Process() {
           <div className="inline-flex items-center gap-3 mb-6">
             <span className="w-6 h-px bg-muted-foreground" />
             <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
-              How it works
+              How an engagement runs
             </span>
           </div>
           <h2 className="text-4xl lg:text-5xl xl:text-6xl font-light tracking-tight leading-[1.05] mb-6">
-            From audit to measured lift in six steps.
+            From diagnostic to measured outcome.
           </h2>
           <p className="text-lg text-[#f4f0ff] leading-relaxed">
-            The work starts with a free audit. Nothing gets built until both sides are aligned on what the diagnostic 
-            actually says, what the baseline is, and what the engagement should produce.
+            Every engagement starts with a diagnostic. Nothing gets built until both sides are aligned on what the diagnostic actually says, what the baseline is, and what the engagement should produce. The cadence below is illustrated with a Lifecycle Marketing build, the most common starting point. AI Strategy, Workflow Automation, Custom Internal Tools, and the other service lines follow a comparable shape — diagnostic, scope, build, launch, operate, true up — with the specifics adjusted to the work.
           </p>
         </motion.div>
 

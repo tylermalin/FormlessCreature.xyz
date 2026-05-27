@@ -18,28 +18,33 @@ export function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
+          <div className="inline-flex items-center gap-3 mb-6">
+            <span className="w-6 h-px bg-muted-foreground" />
+            <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+              Let&apos;s talk
+            </span>
+          </div>
           <h2 className="text-4xl lg:text-5xl xl:text-6xl font-light tracking-tight leading-[1.05] mb-6">
             Start with a free audit.
           </h2>
-          
+
           <p className="text-lg text-muted-foreground leading-relaxed mb-10 max-w-xl mx-auto">
-            30-minute scoping call. Written diagnostic of your funnel. No fee. No commitment. 
-            If we are not the right fit, we say so.
+            30-minute scoping call. Written diagnostic delivered within five business days. No fee. No commitment. If we are the right fit, we move to engagement letter. If we are not, the diagnostic is yours to keep.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              href="mailto:tyler@formlesscreature.xyz"
+            <Link
+              href="/audit"
               className="inline-flex items-center justify-center gap-2 bg-foreground text-background px-8 py-4 rounded-2xl font-medium hover:bg-transparent hover:text-foreground border border-foreground transition-all group text-base"
             >
-              tyler@formlesscreature.xyz
+              Request your free audit
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link 
-              href="#faq"
+            <Link
+              href="mailto:tyler@formlesscreature.xyz"
               className="inline-flex items-center justify-center gap-2 border border-border/40 px-8 py-4 rounded-2xl font-medium text-foreground hover:border-foreground hover:bg-foreground/5 transition-colors text-base"
             >
-              Read the FAQ first
+              tyler@formlesscreature.xyz
             </Link>
           </div>
         </motion.div>

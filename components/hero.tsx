@@ -26,31 +26,29 @@ export function Hero() {
             <div className="inline-flex items-center gap-3 mb-8">
               <span className="w-6 h-px bg-muted-foreground" />
               <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
-                Growth Infrastructure for Platforms
+                Consulting for growth, AI integration, automation
               </span>
             </div>
-            
+
             <h1 className="text-5xl sm:text-6xl lg:text-[5.5rem] font-light tracking-tight leading-[1.0] mb-8">
-              Acquisition is solved.
+              Finally,
               <br />
-              <span className="text-muted-foreground">Retention is infrastructure.</span>
+              <span className="text-muted-foreground">one team that runs all of it.</span>
             </h1>
-            
+
             <p className="text-lg text-[#f4f0ff] leading-relaxed max-w-xl mb-10">
-              We build the lifecycle systems that turn first-time users into compounding revenue. 
-              Email, SMS, promotional bonus engines, and the compliance architecture underneath them. 
-              Engineered, measured, tied to your numbers.
+              Most companies stitch together five vendors who do not talk to each other. We integrate growth, AI, and automation under two partners — operators who have built and sold an Inc. 500 digital agency, run regulatory enforcement for the federal government, and shipped infrastructure across every layer of the stack we now sell.
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <Link 
-                href="#contact"
+              <Link
+                href="/audit"
                 className="inline-flex items-center gap-2 bg-foreground text-background px-6 py-3.5 rounded-2xl font-medium hover:bg-transparent hover:text-foreground border border-foreground transition-all group"
               >
                 Start with a free audit
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link 
+              <Link
                 href="#approach"
                 className="inline-flex items-center gap-2 border border-border/40 px-6 py-3.5 rounded-2xl font-medium text-foreground hover:border-foreground hover:bg-foreground/5 transition-colors"
               >

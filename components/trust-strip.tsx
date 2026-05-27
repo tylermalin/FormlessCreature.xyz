@@ -3,10 +3,10 @@
 import { motion } from "framer-motion"
 
 const stats = [
-  { value: "$20K", label: "Upfront fee, priced at cost" },
-  { value: "4 weeks", label: "Build to launch timeline" },
-  { value: "2 paths", label: "Retainer or performance share" },
-  { value: "12 mo.", label: "Measurement window" },
+  { value: "3", label: "Practice areas" },
+  { value: "16", label: "Service lines" },
+  { value: "1", label: "Point of accountability" },
+  { value: "20+ yrs", label: "Operator experience" },
 ]
 
 export function TrustStrip() {
@@ -21,7 +21,7 @@ export function TrustStrip() {
           transition={{ duration: 0.6 }}
         >
           <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
-            Built for platforms with audience and ambition
+            Three practices. Two partners. Hand-selected specialist bench.
           </span>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
